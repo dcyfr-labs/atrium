@@ -21,7 +21,7 @@ The [DCYFR Labs code of conduct](https://github.com/dcyfr-labs/.github/blob/main
 - Fill in the [pull request template](.github/pull_request_template.md), including the clean-room checklist. A pull request with an unticked box does not merge.
 - Keep each pull request to one change.
 - Add a row to [assets/PROVENANCE.md](assets/PROVENANCE.md) for every asset you add or change.
-- An AI-generated asset needs DCYFR Labs to approve it in an issue before you open the pull request. See [CLEAN_ROOM.md](CLEAN_ROOM.md).
+- Unless a DCYFR Labs maintainer produces it, an AI-generated asset needs a DCYFR Labs maintainer to approve it in an issue before you open the pull request. See [CLEAN_ROOM.md](CLEAN_ROOM.md).
 
 ## Sign your commits (DCO)
 
@@ -33,15 +33,15 @@ Every commit you author needs the line, and its name and email must match the co
 Signed-off-by: Your Name <you@example.com>
 ```
 
-`git commit -s` adds it for you. To fix commits that are missing it:
+`git commit -s` adds it for you. To fix commits that are missing it, run the commands below. In them, `upstream` is the remote that points at dcyfr-labs/atrium (use `origin` if you cloned it directly).
 
 ```sh
-git commit --amend --signoff      # the last commit
-git rebase --signoff HEAD~3       # the last 3 commits (change the number)
-git push --force-with-lease       # update your pull request branch
+git commit --amend --signoff                                # the last commit
+git fetch upstream && git rebase --signoff upstream/main    # every commit on your branch
+git push --force-with-lease                                 # update your pull request branch
 ```
 
-Two kinds of commit go without the line: commits a bot authors, since a bot cannot sign off, and the commits GitHub itself creates (the repository's initial commit and pull request merges). A pull request opened by a bot follows the bot rule in [CLEAN_ROOM.md](CLEAN_ROOM.md). A CI check for the line is planned; it will skip both kinds.
+Two kinds of commit go without the line: commits a bot authors, since a bot cannot make the DCO certification (a `Signed-off-by` line a bot adds for itself does not count), and the commits GitHub itself creates (the repository's initial commit and pull request merges). A pull request opened by a bot follows the bot rule in [CLEAN_ROOM.md](CLEAN_ROOM.md). A CI check for the line is planned; it will skip both kinds.
 
 ## License of contributions
 

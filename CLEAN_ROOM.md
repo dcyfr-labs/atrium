@@ -14,12 +14,12 @@ All of Atrium's code and art will be made for this project. That way the code ca
 
 ## Not allowed
 
-- Copying, vendoring, porting, or translating source code, by hand or with a tool, from any agent-room, agent-office, or visualizer project. This includes Pixel Agents, Claw3D, Hermes3D, OpenClaw Office, Star-Office-UI, Claude-Office, AgentRoom, and AI Town (the **listed projects**), and similar projects.
+- Copying, vendoring, porting, or translating source code, by hand or with a tool, from any agent-room, agent-office, or visualizer project. This includes the **listed projects** (Pixel Agents, Claw3D, Hermes3D, OpenClaw Office, Star-Office-UI, Claude-Office, AgentRoom, and AI Town) and similar projects.
 - Reusing their sprites, tilesets, or layouts.
 - Reading the source code of a listed project while you work on Atrium. The same applies to any AI coding agent working for you.
 - Giving the source code of a listed project to a tool (an AI assistant, a code search, a translator) to produce Atrium code.
 
-These projects are named only to make the rules concrete. Atrium is not affiliated with any of them, and naming them implies no endorsement in either direction.
+These projects are named because the rules above apply to them by name. Atrium is not affiliated with any of them, and naming them implies no endorsement in either direction.
 
 ## Process
 
@@ -27,6 +27,6 @@ These projects are named only to make the rules concrete. Atrium is not affiliat
 - **Prior exposure.** If you have read the source code of a listed project at any time, say so in your pull request. Maintainers may ask you to work on a different component.
 - **Dependencies.** Third-party code enters only as an unmodified package through the package manager. No vendored or patched copies. CI will produce a CycloneDX SBOM and check every license in the dependency tree against an allowlist, failing on copyleft, non-commercial, or unknown licenses (the **license gate**). That gate is planned and not in place yet; until it lands, reviewers check new dependencies by hand.
 - **Assets.** Every asset has a row in [assets/PROVENANCE.md](assets/PROVENANCE.md). An asset without a row does not merge.
-- **AI-generated assets.** An AI-generated asset is accepted only when DCYFR Labs commissions it: a DCYFR Labs maintainer produces it, or DCYFR Labs approves it in advance in an issue that its ledger row links to. It is labeled "AI-generated", with the tool named, wherever it is listed or credited. Its prompt must not name any agent-room, agent-office, or visualizer project, or ask to imitate their art. [assets/PROVENANCE.md](assets/PROVENANCE.md) describes the ledger row and the labelling.
-- **Bot dependency updates.** This rule takes effect once the repository has a package manifest. A pull request that a bot opens (for example Dependabot) and that changes only package manifests and lockfiles is exempt from the clean-room checklist and from DCO sign-off, since a bot cannot sign off. The license gate stands in for the checklist: it is a required check, and the pull request does not merge until it passes. Until the license gate exists, these pull requests do not merge. A bot pull request that changes any other file needs a human to complete the checklist.
+- **AI-generated assets.** An AI-generated asset is accepted only when DCYFR Labs commissions it: a DCYFR Labs maintainer produces it, or a DCYFR Labs maintainer approves it in advance in an issue that its ledger row links to. The tool's terms must allow commercial use of its output. It is labeled "AI-generated", with the tool named, wherever it is listed or credited. Its prompt must not name any agent-room, agent-office, or visualizer project, or ask to imitate their art. [assets/PROVENANCE.md](assets/PROVENANCE.md) describes the ledger row, the labeling, and the provenance metadata to keep.
+- **Bot dependency updates.** This rule takes effect once the repository has a package manifest. A dependency-update pull request that a bot opens (for example Dependabot) and that changes only package manifests and lockfiles is exempt from the clean-room checklist and from the DCO requirement, because a bot cannot make the DCO certification (a `Signed-off-by` line a bot adds for itself does not count). The license gate stands in for the checklist: it will be a required status check, and the pull request does not merge until it passes. Until the license gate exists, these pull requests do not merge. Any other bot pull request needs a human to complete the checklist.
 - **Reporting a breach.** If you believe something in this repository breaks this policy, open an issue that names the file and the source you think it came from. If the breach is confirmed, the affected code or asset is removed.
