@@ -2,25 +2,25 @@
 
 Atrium is a planned local-first, runtime-agnostic control plane and spatial client for AI agents, from DCYFR Labs. The goal is one place where an operator can observe, direct, approve, isolate, and replay agents that run on different runtimes.
 
-> **Status: design stage.** There is no code, no release, and no published package yet. Everything below describes the plan, and the plan will change.
+> **Status: design stage.** There is no code, no release, and no published package yet. The design below is a plan, and the plan will change.
 
 ## The idea: rooms are security boundaries
 
-Existing agent "room" and "office" visualizers draw agents in a scene, but a wall or a door in the scene does not correspond to any real boundary. Atrium starts from the opposite rule: what the room shows is what the system enforces.
+In the agent "room" and "office" visualizers we have looked at, a wall or a door in the scene does not correspond to any real boundary. Atrium's design starts from the opposite rule: what the room shows must be what the system enforces.
 
 - A **room** is a sandbox profile, an egress policy, a credential scope, and a data-classification (TLP) ceiling.
 - **Moving an agent into a room** is a policy-checked command that re-issues the agent's scoped credentials.
 - A **locked door** is a policy deny.
-- The view shows **only state that an event backs**, labeled with its source and its age. Stale or inferred state is drawn as degraded.
+- The view will show **only state that an event backs**, labeled with its source and its age. Stale or inferred state will be drawn as degraded.
 
 ## Design principles
 
-- **Tell the truth.** Every rendered state carries its source, when it was observed, and a confidence value. Errors and retries are first-class parts of the view.
-- **Control as well as observe.** Spawn, pause, resume, kill, reassign, set budgets, and approve. Every command is signed, policy-checked, and audited.
-- **Local-first and secure by default.** Bind to `127.0.0.1` by default, never put tokens in URLs, and reach remote hosts only through an overlay network the operator sets up. If Atrium stops, the agents keep running.
+- **Tell the truth.** Every rendered state will carry its source, when it was observed, and a confidence value. Errors and retries will be first-class parts of the view.
+- **Control as well as observe.** Spawn, pause, resume, kill, reassign, set budgets, and approve. Every command will be signed, policy-checked, and audited.
+- **Local-first and secure by default.** Bind to `127.0.0.1` by default, never put tokens in URLs, and reach remote hosts only through an overlay network the operator sets up. If Atrium stops, the agents will keep running.
 - **Build on open standards.** Implement open specifications directly (OpenTelemetry GenAI conventions, AG-UI, MCP, MCP Apps, A2A, A2UI) and use upstream libraries only as unmodified dependencies.
-- **Event-sourced.** One append-only event log backs the live view, replay, and audit.
-- **Two views.** A non-spatial Console view ships alongside the spatial Room view, for accessibility and dense operations.
+- **Event-sourced.** One append-only event log will back the live view, replay, and audit.
+- **Two views.** A non-spatial Console view will ship alongside the spatial Room view, for accessibility and dense operations.
 
 ## Planned components
 
@@ -60,4 +60,4 @@ Report vulnerabilities privately, not in public issues. See [SECURITY.md](SECURI
 
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+Apache License 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE). Each asset's license is recorded in its row in [assets/PROVENANCE.md](assets/PROVENANCE.md).

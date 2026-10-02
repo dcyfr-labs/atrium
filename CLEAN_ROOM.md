@@ -4,7 +4,7 @@ This policy is part of the project's contract, not a guideline. A change that br
 
 ## Why
 
-All of Atrium's code and art will be made for this project, so the whole repository can be released under the Apache License 2.0 without inheriting code or art terms from anywhere else.
+All of Atrium's code and art will be made for this project. That way the code can be released under the Apache License 2.0, every asset carries a license recorded in [assets/PROVENANCE.md](assets/PROVENANCE.md), and no file inherits non-commercial or copyleft terms from another project.
 
 ## Allowed
 
@@ -24,4 +24,4 @@ These projects are named only to make the rule concrete. Atrium is not affiliate
 - **Attestation.** Every pull request completes the clean-room checklist in the [pull request template](.github/pull_request_template.md). A pull request with an unticked box does not merge.
 - **Dependencies.** Third-party code enters only as an unmodified package through the package manager. No vendored or patched copies. CI will produce a CycloneDX SBOM and fail when the dependency tree contains a copyleft or non-commercial license. That gate is planned and not in place yet; until it lands, reviewers check new dependencies by hand.
 - **Assets.** Every asset has a row in [assets/PROVENANCE.md](assets/PROVENANCE.md). An asset without a row does not merge.
-- **Reporting a breach.** If you believe something in this repository breaks this policy, open an issue that names the file and the source you think it came from.
+- **Reporting a breach.** If you believe something in this repository breaks this policy, open an issue that names the file and the source you think it came from. If the breach is confirmed, the affected code or asset is removed.

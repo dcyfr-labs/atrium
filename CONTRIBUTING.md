@@ -20,7 +20,7 @@ Read [CLEAN_ROOM.md](CLEAN_ROOM.md). It is a condition of contributing. In short
 
 ## Sign your commits (DCO)
 
-Atrium uses the [Developer Certificate of Origin](https://developercertificate.org/) (DCO) 1.1 instead of a contributor license agreement. A `Signed-off-by` line on a commit certifies that you wrote the change, or otherwise have the right to submit it, under this project's license.
+Atrium uses the [Developer Certificate of Origin](https://developercertificate.org/) (DCO) 1.1 instead of a contributor license agreement. A `Signed-off-by` line on a commit certifies that you agree to the DCO. In short: you wrote the change, or otherwise have the right to submit it under this project's license, and you understand that the contribution and your sign-off are public and kept on record.
 
 Every commit needs the line, and its name and email must match the commit author:
 
@@ -32,13 +32,13 @@ Signed-off-by: Your Name <you@example.com>
 
 ```sh
 git commit --amend --signoff      # the last commit
-git rebase --signoff main         # every commit on your branch since main
+git rebase --signoff HEAD~3       # the last 3 commits (change the number)
 git push --force-with-lease       # update your pull request branch
 ```
 
 ## License of contributions
 
-Atrium is licensed under the [Apache License 2.0](LICENSE). Contributions are accepted under the same license (inbound equals outbound), as section 5 of the license describes. There is no separate contributor agreement.
+Atrium is licensed under the [Apache License 2.0](LICENSE). Contributions are accepted under the same license (inbound equals outbound), as section 5 of the license describes. The one exception is an asset whose row in [assets/PROVENANCE.md](assets/PROVENANCE.md) records a different license; that row is the license the asset is contributed under. There is no separate contributor agreement.
 
 ## Security issues
 
