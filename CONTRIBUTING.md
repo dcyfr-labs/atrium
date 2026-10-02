@@ -4,7 +4,11 @@ Atrium is at the design stage. There is no code yet, so most contributions right
 
 ## Before you start
 
-Read [CLEAN_ROOM.md](CLEAN_ROOM.md). It is a condition of contributing. In short: no code, assets, or layouts from other agent-room, agent-office, or visualizer projects, and third-party code only as unmodified dependencies.
+Read [CLEAN_ROOM.md](CLEAN_ROOM.md). It is a condition of contributing. In short: no code, assets, or layouts from other agent-room, agent-office, or visualizer projects, and third-party code only as unmodified dependencies. While you work on Atrium, do not read the source code of the projects CLEAN_ROOM.md lists, and do not have a tool or AI agent read it for you. If you have read that source before, say so in your pull request.
+
+## Code of conduct
+
+The [DCYFR Labs code of conduct](https://github.com/dcyfr-labs/.github/blob/main/CODE_OF_CONDUCT.md) applies to everyone taking part in Atrium.
 
 ## Proposing changes during the design stage
 
@@ -17,12 +21,13 @@ Read [CLEAN_ROOM.md](CLEAN_ROOM.md). It is a condition of contributing. In short
 - Fill in the [pull request template](.github/pull_request_template.md), including the clean-room checklist. A pull request with an unticked box does not merge.
 - Keep each pull request to one change.
 - Add a row to [assets/PROVENANCE.md](assets/PROVENANCE.md) for every asset you add or change.
+- An AI-generated asset needs DCYFR Labs to approve it in an issue before you open the pull request. See [CLEAN_ROOM.md](CLEAN_ROOM.md).
 
 ## Sign your commits (DCO)
 
 Atrium uses the [Developer Certificate of Origin](https://developercertificate.org/) (DCO) 1.1 instead of a contributor license agreement. A `Signed-off-by` line on a commit certifies that you agree to the DCO. In short: you wrote the change, or otherwise have the right to submit it under this project's license, and you understand that the contribution and your sign-off are public and kept on record.
 
-Every commit needs the line, and its name and email must match the commit author:
+Every commit you author needs the line, and its name and email must match the commit author:
 
 ```text
 Signed-off-by: Your Name <you@example.com>
@@ -35,6 +40,8 @@ git commit --amend --signoff      # the last commit
 git rebase --signoff HEAD~3       # the last 3 commits (change the number)
 git push --force-with-lease       # update your pull request branch
 ```
+
+Two kinds of commit go without the line: commits a bot authors, since a bot cannot sign off, and the commits GitHub itself creates (the repository's initial commit and pull request merges). A pull request opened by a bot follows the bot rule in [CLEAN_ROOM.md](CLEAN_ROOM.md). A CI check for the line is planned; it will skip both kinds.
 
 ## License of contributions
 
