@@ -6,22 +6,30 @@ Every asset file in this repository has one row in the ledger below. Assets incl
 
 - One row per file, added in the same pull request as the file. Changing an asset updates its row.
 - **Asset path** is relative to the repository root.
-- **Author or creator** names the person or organization responsible for the asset. For a generated asset, name the person who ran the tool.
+- **Author or creator** names the person or organization responsible for the asset. For an AI-generated asset, name DCYFR Labs as the commissioner and the person who ran the tool, for example `DCYFR Labs (commissioner); Example Operator (ran the tool)`.
 - **Source** is one of:
-  - `original`: made for Atrium by the named author.
-  - `commissioned`: made for Atrium by the named author under a commission. The notes say who holds the agreement.
-  - `generated with <tool>`: produced with an AI tool. Record the tool and model version, and a prompt reference (the prompt text, or the path to it in this repository).
-- **License** is an SPDX identifier. The license must allow commercial use and modification and must not be share-alike: for example `Apache-2.0`, `CC0-1.0`, or `CC-BY-4.0`. Non-commercial, no-derivatives, and copyleft terms are not accepted. For a generated asset, the tool's terms must also allow commercial use of its output.
+  - `original`: made for Atrium by the named author, without generative AI.
+  - `commissioned`: made for Atrium by the named author under a commission, without generative AI. The notes say who holds the agreement.
+  - `AI-generated with <tool> <model version>`: produced in whole or in part with a generative AI tool. Use this type, not `commissioned`, even though DCYFR Labs commissions it. After the tool and model version, record the prompt reference (the prompt text, or the path to it in this repository) and the commission: the full URL of the issue where a DCYFR Labs maintainer approved the asset in advance, or `DCYFR Labs maintainer` when a maintainer produced it.
+- **License** is an SPDX identifier. The license must allow commercial use and modification and must not be share-alike: for example `Apache-2.0`, `CC0-1.0`, or `CC-BY-4.0`. Non-commercial, no-derivatives, and copyleft terms are not accepted. For an AI-generated asset, the tool's terms must also allow commercial use of its output, and the license records the terms DCYFR Labs offers the file under. Purely AI-generated material may not be protected by copyright in every jurisdiction, so the license covers whatever rights DCYFR Labs holds in it.
 - **Date added** is `YYYY-MM-DD`.
-- **Notes** describe what the asset shows. Describe a generated asset by its style and the tool that produced it, never with verbs that imply a human hand (painted, drawn, illustrated, airbrushed).
+- **Notes** describe what the asset shows. Describe an AI-generated asset by its style and the tool that produced it, never with verbs that imply a human hand (painted, drawn, illustrated, airbrushed).
 - Assets from agent-room, agent-office, or visualizer projects are never accepted, whatever their license (see [CLEAN_ROOM.md](../CLEAN_ROOM.md)).
 
 Example rows (not real assets):
 
 ```text
 | assets/rooms/lab-01/floor.png | Example Author | original | Apache-2.0 | 2026-11-02 | Floor tiles, 32 px grid |
-| assets/rooms/lab-01/desk.png | Example Operator | generated with ExampleTool model-x 1.2 (prompt: assets/prompts/lab-01-desk.txt) | Apache-2.0 | 2026-11-02 | Flat-shaded desk sprite, 4 directions |
+| assets/rooms/lab-01/desk.png | DCYFR Labs (commissioner); Example Operator (ran the tool) | AI-generated with ExampleTool model-x 1.2; prompt: assets/prompts/lab-01-desk.txt; commission: https://github.com/dcyfr-labs/atrium/issues/14 | Apache-2.0 | 2026-11-02 | Flat-shaded desk sprite, 4 directions |
 ```
+
+## AI-generated assets
+
+[CLEAN_ROOM.md](../CLEAN_ROOM.md) sets the rule: an AI-generated asset is accepted only when DCYFR Labs commissions it. For each one:
+
+- **Label it.** In the ledger, the Source cell begins with `AI-generated`. Anywhere else the asset is listed or credited (a credits screen, the README, the docs), call it "AI-generated" and name the tool, for example "AI-generated with ExampleTool model-x 1.2, commissioned by DCYFR Labs".
+- **Keep its provenance metadata.** If the tool embeds provenance metadata, such as C2PA Content Credentials or an IPTC Digital Source Type value, do not strip it, as long as the format can carry it. When you edit or re-export the file, prefer a tool that records a new C2PA manifest, since the old manifest no longer matches an edited file.
+- **Keep the prompt clean.** The prompt must not name any agent-room, agent-office, or visualizer project, or ask to imitate their art.
 
 ## Ledger
 

@@ -48,11 +48,11 @@ Every item here is planned. None of it exists yet, and the names may change.
 
 ## Contributing
 
-While Atrium is at the design stage, the most useful contribution is an issue about the design. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Every commit needs a DCO sign-off.
+While Atrium is at the design stage, the most useful contribution is an issue about the design. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Every commit you author needs a DCO sign-off.
 
 ## Clean room
 
-All of Atrium's code and art will be made for this project. Nothing may be copied or ported from other agent-room projects. The policy is in [CLEAN_ROOM.md](CLEAN_ROOM.md), every pull request attests to it, and asset provenance is recorded in [assets/PROVENANCE.md](assets/PROVENANCE.md).
+All of Atrium's code and art will be made for this project. Nothing may be copied or ported from other agent-room projects. The policy is in [CLEAN_ROOM.md](CLEAN_ROOM.md), every pull request attests to it (bot dependency updates follow their own rule), and asset provenance is recorded in [assets/PROVENANCE.md](assets/PROVENANCE.md).
 
 ## Security
 
