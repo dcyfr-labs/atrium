@@ -16,4 +16,4 @@ Tick every box. A pull request with an unticked box does not merge. The policy i
 - [ ] I have never read the source code of a listed project, or I say in the summary above that I have.
 - [ ] Every asset this change adds or modifies has a row in [assets/PROVENANCE.md](https://github.com/dcyfr-labs/atrium/blob/main/assets/PROVENANCE.md), or the change adds no assets.
 - [ ] Any third-party code in this change arrives as an unmodified upstream package installed through the package manager, with no vendored, copied, or patched copies, or the change adds no third-party code.
-- [ ] Every commit I authored in this pull request carries a DCO `Signed-off-by` line (`git commit -s`). Bot-authored commits and merge commits GitHub creates are exempt, as described in [CONTRIBUTING.md](https://github.com/dcyfr-labs/atrium/blob/main/CONTRIBUTING.md).
+- [ ] Every commit I authored in this pull request carries a DCO `Signed-off-by` line (`git commit -s`). Commits a dependency-update bot authors and merge commits GitHub creates are exempt, as described in [CONTRIBUTING.md](https://github.com/dcyfr-labs/atrium/blob/main/CONTRIBUTING.md).

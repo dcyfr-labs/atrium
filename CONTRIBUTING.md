@@ -41,7 +41,7 @@ git fetch upstream && git rebase --signoff upstream/main    # every commit on yo
 git push --force-with-lease                                 # update your pull request branch
 ```
 
-Two kinds of commit go without the line: commits a bot authors, since a bot cannot make the DCO certification (a `Signed-off-by` line a bot adds for itself does not count), and the commits GitHub itself creates (the repository's initial commit and pull request merges). A pull request opened by a bot follows the bot rule in [CLEAN_ROOM.md](CLEAN_ROOM.md). A CI check for the line is planned; it will skip both kinds.
+Two kinds of commit go without the line: commits a dependency-update bot authors (for example Dependabot), since a bot cannot make the DCO certification (a `Signed-off-by` line a bot adds for itself does not count), and the commits GitHub itself creates (the repository's initial commit and pull request merges). Commits an AI coding agent makes for you are yours: author them and sign them off yourself. A pull request opened by a bot follows the bot rule in [CLEAN_ROOM.md](CLEAN_ROOM.md). A CI check for the line is planned; it will skip both kinds.
 
 ## License of contributions
 
